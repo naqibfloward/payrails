@@ -35,6 +35,84 @@ export const DropInPayment = ({
     if (!payrailsClient) return;
 
     const dropIn = payrailsClient.dropin({
+      paymentMethodsConfiguration: {
+        showPaymentMethodLogo: true,
+        cards: {
+          layout: [["CARD_NUMBER"], ["EXPIRATION_DATE", "CVV"]],
+          showStoreInstrumentCheckbox: true,
+        },
+      },
+      styles: {
+        container: {
+          styles: {
+            backgroundColor: "#ffffff",
+            border: "none",
+          },
+        },
+        element: {
+          base: {
+            borderRadius: "12px",
+            border: "1px solid #e8eaed",
+            boxShadow: "0 2px 10px rgba(0, 0, 0, 0.07)",
+            transition: "border-color 300ms ease, box-shadow 300ms ease",
+          },
+          active: {
+            borderColor: "rgba(7, 78, 89,1)",
+            boxShadow: "0 4px 14px rgba(7, 78, 89, 0.15)",
+          },
+        },
+        cardPaymentButton: {
+          base: {
+            backgroundColor: "rgba(7, 78, 89,0.95)",
+            borderRadius: "10px",
+          },
+          hover: {
+            backgroundColor: "rgba(7, 78, 89,1)",
+          },
+        },
+        cardForm: {
+          inputFields: {
+            all: {
+              base: {
+                border: "1px solid #e8eaed",
+                borderRadius: "8px",
+                margin: "5px",
+              },
+            },
+            CARD_NUMBER: {
+              base: {
+                maxWidth: "calc(100% - 0.5rem)",
+              },
+            },
+            EXPIRATION_DATE: {
+              base: {
+                maxWidth: "calc(100% - 0.5rem)",
+              },
+            },
+            CVV: {
+              base: {
+                maxWidth: "calc(100% - 0.5rem)",
+              },
+            },
+          },
+          storeInstrumentCheckbox: {
+            display: "flex",
+            alignItems: "center",
+            marginBlock: "12px",
+            accentColor: "rgba(7, 78, 89,1)",
+          },
+        },
+        googlePayButton: {
+          storeInstrumentCheckbox: {
+            accentColor: "rgba(7, 78, 89,1)",
+          },
+        },
+        paypalButton: {
+          storeInstrumentCheckbox: {
+            accentColor: "rgba(7, 78, 89,1)",
+          },
+        },
+      },
       events: {
         onSuccess: () => onSuccessRef.current(),
         onFailed: (action, e) => {
