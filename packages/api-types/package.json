@@ -1,0 +1,14 @@
+{
+  "name": "@payrails-poc/api-types",
+  "version": "0.0.0",
+  "main": "index.ts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "upgrade": "bunx ncu --dep=prod,dev,peer,optional --target=latest -u"
+  },
+  "dependencies": {
+    "@payrails-poc/api": "workspace:*"
+  }
+}

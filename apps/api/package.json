@@ -1,0 +1,19 @@
+{
+  "name": "@payrails-poc/api",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/controller.ts"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.4.1",
+    "@sinclair/typebox": "^0.34.49",
+    "elysia": "^1.4.28",
+    "ky": "^2.0.1",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.12"
+  },
+  "module": "src/controller.js"
+}
