@@ -48,6 +48,10 @@ export const DropInPayment = ({
           styles: {
             backgroundColor: "#ffffff",
             border: "none",
+            width: "100%",
+            padding: "0",
+            alignItems: "stretch",
+            minInlineSize: "auto",
           },
         },
         element: {
