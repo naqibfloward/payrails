@@ -206,21 +206,27 @@ const SdkModePayment = ({
 }) => {
   const sdkMode = useCheckoutStore((state) => state.sdkMode);
 
-  return sdkMode === "elements" ? (
-    <ElementsPayment
-      payrailsClient={payrailsClient}
-      currency={currency}
-      onSuccess={onSuccess}
-      onBack={onBack}
-      refetchSession={refetchSession}
-    />
-  ) : (
-    <DropInPayment
-      payrailsClient={payrailsClient}
-      currency={currency}
-      onSuccess={onSuccess}
-      onBack={onBack}
-      refetchSession={refetchSession}
-    />
+  return (
+    <div className="space-y-1">
+      <h2 className="text-base font-semibold text-foreground">Checkout</h2>
+      <p className="text-sm text-muted-foreground">Payment Options</p>
+      {sdkMode === "elements" ? (
+        <ElementsPayment
+          payrailsClient={payrailsClient}
+          currency={currency}
+          onSuccess={onSuccess}
+          onBack={onBack}
+          refetchSession={refetchSession}
+        />
+      ) : (
+        <DropInPayment
+          payrailsClient={payrailsClient}
+          currency={currency}
+          onSuccess={onSuccess}
+          onBack={onBack}
+          refetchSession={refetchSession}
+        />
+      )}
+    </div>
   );
 };
