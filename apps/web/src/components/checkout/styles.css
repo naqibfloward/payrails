@@ -1,0 +1,55 @@
+/* Payrails checkbox primary color */
+.payrails-dropin-item
+  .payrails-store-instrument
+  input[type="checkbox"]:checked {
+  background-color: rgba(7, 78, 89, 1) !important;
+  border-color: rgba(7, 78, 89, 1) !important;
+}
+
+.payrails-dropin-item
+  .payrails-store-instrument
+  input[type="checkbox"]:checked::after {
+  content: "\2714" !important;
+  display: block !important;
+  color: white !important;
+  position: absolute !important;
+  font-size: 12px !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+.payrails-dropin-item input[type="radio"]:checked {
+  border-color: rgba(7, 78, 89, 1) !important;
+  background-color: rgba(7, 78, 89, 1) !important;
+}
+
+.payrails-dropin-item input[type="radio"]:checked::after {
+  content: "" !important;
+  display: block !important;
+  width: 5px !important;
+  height: 9px !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  border: solid white !important;
+  border-width: 0 1.5px 1.5px 0 !important;
+  position: absolute !important;
+  top: 45% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+}
+
+/* Spacing between radio/checkbox and payment method name */
+.payrails-dropin-item input[type="radio"] {
+  margin-right: 14px !important;
+}
+
+/* Spacing between label and payment content (form/button) */
+.payrails-dropin-item.active .payrails-dropin-item-container {
+  margin-top: 24px !important;
+}
+
+/* Spacing between store instrument checkbox and card inputs */
+.payrails-dropin-item .payrails-store-instrument {
+  margin-top: 20px !important;
+}

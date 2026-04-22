@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft } from "lucide-react";
 import { useUpdateAmount } from "@/api/request";
 import { useCheckoutStore } from "@/stores/checkout";
+import "./styles.css";
 
 type PayrailsClient = ReturnType<typeof Payrails.init>;
 
